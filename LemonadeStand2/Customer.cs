@@ -12,9 +12,9 @@ namespace LemonadeStand2
         public int numberOfCustomersTotal;
         public double numberOfCustomerBuying;
         public double buyRate;
-        readonly Recipe recipe;
+        public int numberOfSales;
         // Constructor
-        public Customer(Weather weather, Player player)
+        public Customer(Weather weather, Player player, Recipe recipe)
         {
             Random random = new Random();
             numberOfCustomersTotal = random.Next(50, 125);
@@ -25,8 +25,23 @@ namespace LemonadeStand2
         // Member Methods (CAN DO)
         public double CalculateBuyRate(Weather weather, Recipe recipe)
         {
-            buyRate = 2 + (weather.temperature / 100) - (weather.chanceOfRain + weather.chanceOfClouds);
-            buyRate *= recipe.pricePerCup;
+            buyRate = 1 + (weather.temperature / 50) - (weather.chanceOfRain + weather.chanceOfClouds);
+            if(recipe.pricePerCup <= 0.25)
+            {
+                buyRate *= 1.5;
+            }
+            else if(recipe.pricePerCup > 0.25 && recipe.pricePerCup <= 0.50)
+            {
+                buyRate *= 1.25;
+            }
+            else if(recipe.pricePerCup > 0.50 && recipe.pricePerCup <= 0.65)
+            {
+                buyRate *= 1.15;
+            }
+            else if (recipe.pricePerCup >= 0.80)
+            {
+                buyRate *= 0.75;
+            }
 
             return buyRate;
         }
@@ -34,10 +49,12 @@ namespace LemonadeStand2
         {
             if (recipe.cupsMade > numberOfCustomerBuying)
             {
+                numberOfSales = int.Parse((numberOfCustomerBuying).ToString());
                 player.money += numberOfCustomerBuying * recipe.pricePerCup;
             }
             else if (numberOfCustomerBuying > recipe.cupsMade)
             {
+                numberOfSales = int.Parse((recipe.cupsMade).ToString());
                 player.money += recipe.cupsMade * recipe.pricePerCup;
             }
         }

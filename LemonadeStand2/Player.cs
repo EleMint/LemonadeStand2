@@ -33,6 +33,10 @@ namespace LemonadeStand2
         {
             Console.WriteLine("\r\nYour Inventory:\r\nMoney: {0}\r\nCups: {1}\r\nLemons: {2}\r\nSugar: {3}\r\nIce: {4}", money, cups, lemons, sugar, ice);
         }
+        public Recipe GetRecipe()
+        {
+            return recipe;
+        }
 
         public void InputRecipe(Player player, int inputLemons, int inputSugar, int inputIce, double inputPPC)
         {

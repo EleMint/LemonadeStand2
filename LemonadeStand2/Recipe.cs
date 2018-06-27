@@ -22,10 +22,16 @@ namespace LemonadeStand2
             this.ice = ice;
             this.pricePerCup = pricePerCup;
             this.cupsMade = (lemons * 3) + ice;
+            if (ice * cupsMade < player.ice)
+            {
+                cupsMade = player.ice * cupsMade;
+                player.ice = 0;
+            }
             if (cupsMade > player.cups)
             {
-
+                cupsMade = player.cups;
             }
+            
             CalculateDailyItemUsage(player, lemons, sugar, ice, cupsMade);
         }
         // Member Methods (CAN DO)

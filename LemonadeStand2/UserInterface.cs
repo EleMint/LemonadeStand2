@@ -117,9 +117,9 @@ namespace LemonadeStand2
             Console.WriteLine("\r\nCurrent Weather Forcast:\r\nForcasted Temperature - {0}\r\nForcasted Sky Condition - {1}", weather.temperature, weather.skyCondition);
         }
 
-        public static void ShowEndOfDayTotal(Day day, Player player)
+        public static void ShowEndOfDayTotal(Day day, Player player, Recipe recipe)
         {
-            day.EndOfDayTotal(day, player);
+            day.EndOfDayTotal(day, player, recipe);
         }
         public static void ShowEndOfGameTotal(Player player)
         {
@@ -135,6 +135,10 @@ namespace LemonadeStand2
             {
                 Console.WriteLine("\r\nIn Total, You Lost: ${0}", (20 - player.money));
             }
+        }
+        public static Recipe GetRecipe(Player player)
+        {
+            return player.GetRecipe();
         }
 
         public static void AskToPlayAgain()
@@ -163,11 +167,11 @@ namespace LemonadeStand2
             
             if (customer.numberOfCustomerBuying >= recipe.cupsMade)
             {
-                Console.WriteLine("{0} Customers Bought Your Lemonade For A Total Of ${1}", recipe.cupsMade, recipe.pricePerCup);
+                Console.WriteLine("\r\n{0} Customers Bought Your Lemonade For ${1} Per Cup", customer.numberOfSales, recipe.pricePerCup);
             }
             else
             {
-                Console.WriteLine("{0} Customers Bought Your Lemonade For A Total Of ${1}", Math.Floor(customer.numberOfCustomerBuying), recipe.pricePerCup);
+                Console.WriteLine("\r\n{0} Customers Bought Your Lemonade For ${1} Per Cup", customer.numberOfSales, recipe.pricePerCup);
             }
 
         }

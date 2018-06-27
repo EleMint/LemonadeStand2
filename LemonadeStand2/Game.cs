@@ -23,24 +23,24 @@ namespace LemonadeStand2
         // Member Methods (CAN DO)
         public void RunGame()
         {
+            UserInterface.ShowIntroduction();
             AskForInstructions();
             gameLength = UserInterface.AskGameLength();
             do
             {
                 currentDay++;
-                RunDaily();
+                RunDaily(currentDay);
             }
             while (currentDay < gameLength);
             UserInterface.ShowEndOfGameTotal(player);
             UserInterface.AskToPlayAgain();
 
         }
-        public void RunDaily()
+        public void RunDaily(int currentDay)
         {
-            newDay = new Day(player);
-            //TODO: Run Customer Buying Lemonade
-            //TODO: Reduce Player Stock of Items
-            UserInterface.ShowEndOfDayTotal(newDay, player);
+            newDay = new Day(currentDay, player);
+            UserInterface.GetRecipe(player);
+            UserInterface.ShowEndOfDayTotal(newDay, player, UserInterface.GetRecipe(player));
         }
         public string AskToBuyProduct()
         {
