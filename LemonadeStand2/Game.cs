@@ -8,19 +8,15 @@ namespace LemonadeStand2
 {
     class Game
     {
-        // Member Variables (HAS A)
         Player player;
         Day newDay;
         public int gameLength;
         public int currentDay;
-        // Constructor
         public Game()
         {
             player = new Player();
             currentDay = 0;
         }
-
-        // Member Methods (CAN DO)
         public void RunGame()
         {
             UserInterface.ShowIntroduction();

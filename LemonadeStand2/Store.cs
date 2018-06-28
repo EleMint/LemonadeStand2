@@ -8,7 +8,6 @@ namespace LemonadeStand2
 {
     static class Store
     {
-        // Member Methods (CAN DO)
         public static void BuyProduct(Player player)
         {
             Console.WriteLine("\r\nPrices: Amount < 25 --> $0.07 / Item, 25 <= Amount < 75 --> $0.04 / Item, 75 <= Amount --> $0.03 / Item.\r\nWhat Would You Like To Purchace? (Cups, Lemons, Sugar, Ice)");

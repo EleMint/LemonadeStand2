@@ -8,13 +8,13 @@ namespace LemonadeStand2
 {
     class Day
     {
-        // Member Variables (HAS A)
         readonly Weather weather;
         readonly Customer customer;
-
-        // Constructor
         public Day(int currentDay, Player player)
         {
+            player.moneyDayBegin = player.money;
+            player.moneyDayEnd = 0;
+            player.ice = 0;
             weather = new Weather();
             ShowCurrentDay(currentDay);
             DailyWeatherReport();
@@ -25,12 +25,7 @@ namespace LemonadeStand2
             }
             while (userInput == "yes");
             UserInterface.AskForRecipe(player);
-            customer = new Customer(weather, player, UserInterface.GetRecipe(player));
-            player.moneyDayBegin = player.money;
-            player.moneyDayEnd = 0;
-            player.ice = 0;
-
-            
+            customer = new Customer(weather, player, UserInterface.GetRecipe(player));    
         }
         public void ShowCurrentDay(int currentDay)
         {
@@ -40,7 +35,6 @@ namespace LemonadeStand2
         public void DailyWeatherReport()
         {
             Console.WriteLine("\r\nCurrent Weather Forecast:\r\nTemperature - {0}\r\nSky Condition - {1}", weather.temperature, weather.skyCondition);
-
         }
         public void EndOfDayTotal(Day day, Player player, Recipe recipe)
         {
@@ -48,6 +42,7 @@ namespace LemonadeStand2
             double moneyDay = player.moneyDayBegin - player.moneyDayEnd;
             double moneyDay1 = player.moneyDayEnd - player.moneyDayBegin;
             UserInterface.ShowCustomerPurchase(customer, player, recipe);
+            Console.WriteLine("\r\nToday You Sold: ${0} Of Lemonade", recipe.cupsMade * recipe.pricePerCup);
             if (player.moneyDayBegin > player.moneyDayEnd)
             {
                 Console.WriteLine("\r\nToday You Lost: ${0}", moneyDay);

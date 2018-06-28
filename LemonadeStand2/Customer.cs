@@ -8,12 +8,10 @@ namespace LemonadeStand2
 {
     class Customer
     {
-        // Member Variables (HAS A)
         public int numberOfCustomersTotal;
         public double numberOfCustomerBuying;
         public double buyRate;
         public int numberOfSales;
-        // Constructor
         public Customer(Weather weather, Player player, Recipe recipe)
         {
             Random random = new Random();
@@ -22,7 +20,6 @@ namespace LemonadeStand2
             this.numberOfCustomerBuying = numberOfCustomersTotal * buyRate;
             BuyLemonade(recipe, player);
         }
-        // Member Methods (CAN DO)
         public double CalculateBuyRate(Weather weather, Recipe recipe)
         {
             buyRate = 1 + (weather.temperature / 50) - (weather.chanceOfRain + weather.chanceOfClouds);

@@ -8,13 +8,11 @@ namespace LemonadeStand2
 {
     class Recipe
     {
-        // Member Variables (HAS A)
         public int lemons;
         public int sugar;
         public int ice;
         public double pricePerCup;
         public int cupsMade;
-        // Constructor
         public Recipe(Player player, int lemons, int sugar, int ice, double pricePerCup)
         {
             this.lemons = lemons;
@@ -34,7 +32,6 @@ namespace LemonadeStand2
             
             CalculateDailyItemUsage(player, lemons, sugar, ice, cupsMade);
         }
-        // Member Methods (CAN DO)
         public void CalculateDailyItemUsage(Player player, int lemons, int sugar, int ice, int cups)
         {
             player.lemons -= lemons;

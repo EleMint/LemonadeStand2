@@ -164,16 +164,7 @@ namespace LemonadeStand2
         }
         public static void ShowCustomerPurchase(Customer customer, Player player, Recipe recipe)
         {
-            
-            if (customer.numberOfCustomerBuying >= recipe.cupsMade)
-            {
-                Console.WriteLine("\r\n{0} Customers Bought Your Lemonade For ${1} Per Cup", customer.numberOfSales, recipe.pricePerCup);
-            }
-            else
-            {
-                Console.WriteLine("\r\n{0} Customers Bought Your Lemonade For ${1} Per Cup", customer.numberOfSales, recipe.pricePerCup);
-            }
-
+            Console.WriteLine("\r\n{0} Customers Bought Your Lemonade For ${1} Per Cup", customer.numberOfSales, recipe.pricePerCup);
         }
     }
 }

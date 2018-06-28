@@ -8,7 +8,6 @@ namespace LemonadeStand2
 {
     class Player
     {
-        // Member Variables (HAS A)
         Recipe recipe;
         public double money;
         public double moneyDayBegin;
@@ -17,8 +16,6 @@ namespace LemonadeStand2
         public int lemons;
         public int sugar;
         public int ice;
-
-        // Constructor
         public Player()
         {
             money = 20.00;
@@ -27,8 +24,6 @@ namespace LemonadeStand2
             sugar = 0;
             ice = 0;
         }
-        // Member Methods (CAN DO)
-
         public void ShowInventory()
         {
             Console.WriteLine("\r\nYour Inventory:\r\nMoney: {0}\r\nCups: {1}\r\nLemons: {2}\r\nSugar: {3}\r\nIce: {4}", money, cups, lemons, sugar, ice);

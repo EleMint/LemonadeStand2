@@ -8,14 +8,12 @@ namespace LemonadeStand2
 {
     class Weather
     {
-        // Member Variables (HAS A)
         public double chanceOfRain;
         public double chanceOfClouds;
         public double temperature;
         public string skyCondition;
         public bool clouds;
         public bool rain;
-        // Constructor
         public Weather()
         {
             
