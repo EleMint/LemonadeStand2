@@ -20,9 +20,18 @@ namespace LemonadeStand2
             this.numberOfCustomerBuying = numberOfCustomersTotal * buyRate;
             BuyLemonade(recipe, player);
         }
+
+        internal Day Day
+        {
+            get => default(Day);
+            set
+            {
+            }
+        }
+
         public double CalculateBuyRate(Weather weather, Recipe recipe)
         {
-            buyRate = 1 + (weather.temperature / 50) - (weather.chanceOfRain + weather.chanceOfClouds);
+            buyRate = 1 + (weather.temperature / 50) - (weather.rainChance + weather.cloudChance);
             if(recipe.pricePerCup <= 0.25)
             {
                 buyRate *= 1.5;

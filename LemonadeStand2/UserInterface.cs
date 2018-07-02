@@ -8,6 +8,14 @@ namespace LemonadeStand2
 {
     static class UserInterface
     {
+        internal static Game Game
+        {
+            get => default(Game);
+            set
+            {
+            }
+        }
+
         public static void ShowIntroduction()
         {
             Console.WriteLine("\t Welcome To Your Lemonade Stand\r\nBuy Materials, Make Lemonade, And (Hopefully) Make Money.\r\nHow Much Money Can You Make At The End Of The Game?");

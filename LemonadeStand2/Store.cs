@@ -8,6 +8,14 @@ namespace LemonadeStand2
 {
     static class Store
     {
+        internal static Game Game
+        {
+            get => default(Game);
+            set
+            {
+            }
+        }
+
         public static void BuyProduct(Player player)
         {
             Console.WriteLine("\r\nPrices: Amount < 25 --> $0.07 / Item, 25 <= Amount < 75 --> $0.04 / Item, 75 <= Amount --> $0.03 / Item.\r\nWhat Would You Like To Purchace? (Cups, Lemons, Sugar, Ice)");

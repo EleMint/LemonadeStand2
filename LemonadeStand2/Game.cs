@@ -17,6 +17,23 @@ namespace LemonadeStand2
             player = new Player();
             currentDay = 0;
         }
+
+        internal Program Program
+        {
+            get => default(Program);
+            set
+            {
+            }
+        }
+
+        internal Player Player
+        {
+            get => default(Player);
+            set
+            {
+            }
+        }
+
         public void RunGame()
         {
             UserInterface.ShowIntroduction();
@@ -55,6 +72,11 @@ namespace LemonadeStand2
                     break;
             }
 
+        }
+
+        public void remove()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

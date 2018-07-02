@@ -32,6 +32,15 @@ namespace LemonadeStand2
             
             CalculateDailyItemUsage(player, lemons, sugar, ice, cupsMade);
         }
+
+        internal Day Day
+        {
+            get => default(Day);
+            set
+            {
+            }
+        }
+
         public void CalculateDailyItemUsage(Player player, int lemons, int sugar, int ice, int cups)
         {
             player.lemons -= lemons;

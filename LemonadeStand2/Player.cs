@@ -24,6 +24,7 @@ namespace LemonadeStand2
             sugar = 0;
             ice = 0;
         }
+
         public void ShowInventory()
         {
             Console.WriteLine("\r\nYour Inventory:\r\nMoney: {0}\r\nCups: {1}\r\nLemons: {2}\r\nSugar: {3}\r\nIce: {4}", money, cups, lemons, sugar, ice);

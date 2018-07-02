@@ -27,6 +27,15 @@ namespace LemonadeStand2
             UserInterface.AskForRecipe(player);
             customer = new Customer(weather, player, UserInterface.GetRecipe(player));    
         }
+
+        internal Game Game
+        {
+            get => default(Game);
+            set
+            {
+            }
+        }
+
         public void ShowCurrentDay(int currentDay)
         {
             Console.WriteLine("Beginning of Day {0}", currentDay);

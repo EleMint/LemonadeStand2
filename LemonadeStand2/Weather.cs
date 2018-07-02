@@ -6,43 +6,70 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand2
 {
-    class Weather
+    public class Weather
     {
-        public double chanceOfRain;
-        public double chanceOfClouds;
         public double temperature;
         public string skyCondition;
+        public double cloudChance;
+        public double rainChance;
         public bool clouds;
         public bool rain;
+
         public Weather()
         {
-            
             Random random = new Random();
-            double randomNum = random.Next(1, 100);
-            double randomNum2 = random.Next(1, 100);
+            CreateWeather(random);
+        }
+
+        public void CreateWeather(Random random)
+        {
+            cloudChance = (random.Next(1, 100) / 100);
+            rainChance = (random.Next(1, 100) / 100);
             temperature = random.Next(65, 100);
-            chanceOfClouds = randomNum / 100;
-            if (chanceOfClouds > 0.5)
+            SetClouds(cloudChance);
+            SetRain(rainChance, clouds);
+            SetSkyCondition(clouds, rain);  
+        }
+
+        public void SetClouds(double number)
+        {
+            if (number > 0.5)
             {
-                clouds = true;
-                skyCondition += "Clouds ";
+                clouds = true;  
             }
             else
             {
                 clouds = false;
-                skyCondition += "Clear Skies Sunny ";
             }
-            chanceOfRain = randomNum2 / 100;
-            if (chanceOfRain > 0.5 && clouds)
+        }
+
+        public void SetRain(double number, bool hasClouds)
+        {
+            if (number > 0.5 && hasClouds)
             {
-                rain = true;
-                skyCondition += "Rain ";
+                rain = true; 
             }
             else
             {
-                rain = false;
-                skyCondition += "No Rain ";
+                rain = false; 
             }
+        }
+        
+        public void SetSkyCondition(bool clouds, bool rain)
+        {
+            if(rain && clouds)
+            {
+                skyCondition = "Clouds and Rain";
+            }
+            else if(!rain && clouds)
+            {
+                skyCondition = "Clouds, No Rain";
+            }
+            else
+            {
+                skyCondition = "Clear Skies and Sunny";
+            }
+
         }
     }
 }

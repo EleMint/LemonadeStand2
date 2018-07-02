@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LemonadeStand2", "LemonadeStand2\LemonadeStand2.csproj", "{43136BB0-85F1-49B4-9318-302CAC504873}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LemonadeStandUnitTests", "LemonadeStandUnitTests\LemonadeStandUnitTests.csproj", "{C1922221-F691-4DDC-9D49-C0517DF0CC3D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{43136BB0-85F1-49B4-9318-302CAC504873}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43136BB0-85F1-49B4-9318-302CAC504873}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43136BB0-85F1-49B4-9318-302CAC504873}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1922221-F691-4DDC-9D49-C0517DF0CC3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1922221-F691-4DDC-9D49-C0517DF0CC3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1922221-F691-4DDC-9D49-C0517DF0CC3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1922221-F691-4DDC-9D49-C0517DF0CC3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
